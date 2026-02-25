@@ -1,4 +1,4 @@
-# Telemetry Aggregator Application
+# Zephyr Telemetry Aggregator Application
 
 ## High-Level Architecture Overview
 
@@ -80,3 +80,15 @@ This design prioritizes the system stability over perfect data delivery, ensurin
 **No Persistence**: Telemetry data is not stored or transmitted, only printed to console.
 
 **Load Simulation Simplicity**: CPU load spikes use busy-wait loops intermittently. Sleep used may drift as interval and spike durations are not strictly timed. This can result into not strictly timed logging of the load spikes.
+
+## Development Environment Requirements
+
+- Platform: Zephyr RTOS
+- Target: QEMU Cortex-M3/x86
+- Language: Embedded C
+- West tool
+
+## Build Instructions
+
+- west build -b qemu_x86
+- west build -t run
